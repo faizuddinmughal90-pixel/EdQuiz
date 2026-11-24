@@ -1,0 +1,818 @@
+[
+  {
+    "id": "web-dev",
+    "title": "Web Development Essentials",
+    "description": "Test your knowledge of HTML5, CSS3, modern JavaScript, and web fundamentals.",
+    "category": "Web Development",
+    "durationMinutes": 10,
+    "passingPercentage": 60,
+    "icon": "globe",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Which HTML5 element is semantically used to define the primary navigation links of a webpage?",
+        "options": [
+          {"id": "A", "text": "<menu>"},
+          {"id": "B", "text": "<nav>"},
+          {"id": "C", "text": "<navigate>"},
+          {"id": "D", "text": "<header>"}
+        ],
+        "correctOption": "B",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "The <nav> tag is the HTML5 semantic standard specifically designed to hold primary navigation menus and link lists."
+      },
+      {
+        "id": 2,
+        "question": "In CSS Flexbox, which property is used to align items along the cross-axis?",
+        "options": [
+          {"id": "A", "text": "justify-content"},
+          {"id": "B", "text": "align-items"},
+          {"id": "C", "text": "flex-direction"},
+          {"id": "D", "text": "align-content"}
+        ],
+        "correctOption": "B",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "'align-items' controls alignment along the cross-axis, whereas 'justify-content' aligns along the main-axis."
+      },
+      {
+        "id": 3,
+        "question": "What will be the output of `typeof null` in standard JavaScript?",
+        "options": [
+          {"id": "A", "text": "\"null\""},
+          {"id": "B", "text": "\"undefined\""},
+          {"id": "C", "text": "\"object\""},
+          {"id": "D", "text": "\"number\""}
+        ],
+        "correctOption": "C",
+        "points": 1,
+        "difficulty": "Medium",
+        "explanation": "In JavaScript, `typeof null` returns 'object'. This is a historical quirk stemming from the first JS implementation where objects had a type tag of 0."
+      },
+      {
+        "id": 4,
+        "question": "Which HTTP status code signifies that a resource was successfully created on the server?",
+        "options": [
+          {"id": "A", "text": "200 OK"},
+          {"id": "B", "text": "201 Created"},
+          {"id": "C", "text": "204 No Content"},
+          {"id": "D", "text": "301 Moved Permanently"}
+        ],
+        "correctOption": "B",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "HTTP status code 201 indicates that the request has succeeded and led to the creation of a new resource."
+      },
+      {
+        "id": 5,
+        "question": "What is the primary difference between `let` and `var` in modern JavaScript (ES6+)?",
+        "options": [
+          {"id": "A", "text": "Variables declared with `var` are block-scoped, while `let` is function-scoped."},
+          {"id": "B", "text": "Variables declared with `let` are block-scoped, while `var` is function-scoped."},
+          {"id": "C", "text": "`let` variables cannot be reassigned once declared."},
+          {"id": "D", "text": "`var` is hoisted without initialization, but `let` is never hoisted at all."}
+        ],
+        "correctOption": "B",
+        "points": 1,
+        "difficulty": "Medium",
+        "explanation": "`let` provides block scoping (confined within { ... }), whereas `var` is hoisted and function-scoped."
+      },
+      {
+        "id": 6,
+        "question": "Which Web API is commonly used in modern browsers to asynchronously send HTTP requests without page reloads?",
+        "options": [
+          {"id": "A", "text": "Fetch API"},
+          {"id": "B", "text": "WebSockets"},
+          {"id": "C", "text": "LocalStorage API"},
+          {"id": "D", "text": "ServiceWorker API"}
+        ],
+        "correctOption": "A",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "The Fetch API provides a modern, Promise-based interface for fetching resources asynchronously across the network."
+      },
+      {
+        "id": 7,
+        "question": "Which CSS unit is relative to the font-size of the root element (<html>)?",
+        "options": [
+          {"id": "A", "text": "em"},
+          {"id": "B", "text": "rem"},
+          {"id": "C", "text": "vh"},
+          {"id": "D", "text": "%"}
+        ],
+        "correctOption": "B",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "'rem' stands for Root EM and is relative to the root element's font size, whereas 'em' is relative to its immediate parent font-size."
+      },
+      {
+        "id": 8,
+        "question": "What will `[1, 2, 3] + [4, 5, 6]` evaluate to in JavaScript?",
+        "options": [
+          {"id": "A", "text": "[1, 2, 3, 4, 5, 6]"},
+          {"id": "B", "text": "\"1,2,34,5,6\""},
+          {"id": "C", "text": "NaN"},
+          {"id": "D", "text": "TypeError"}
+        ],
+        "correctOption": "B",
+        "points": 2,
+        "difficulty": "Hard",
+        "explanation": "The binary '+' operator converts both arrays to strings ('1,2,3' and '4,5,6') and concatenates them, producing '1,2,34,5,6'."
+      }
+    ]
+  },
+  {
+    "id": "python-essentials",
+    "title": "Python Programming Essentials",
+    "description": "Assess your understanding of Python syntax, data types, functions, and standard libraries.",
+    "category": "Programming",
+    "durationMinutes": 10,
+    "passingPercentage": 60,
+    "icon": "code",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Which of the following data structures in Python is immutable?",
+        "options": [
+          {"id": "A", "text": "List"},
+          {"id": "B", "text": "Dictionary"},
+          {"id": "C", "text": "Tuple"},
+          {"id": "D", "text": "Set"}
+        ],
+        "correctOption": "C",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "Tuples in Python are immutable; once instantiated, their elements cannot be altered, added, or removed."
+      },
+      {
+        "id": 2,
+        "question": "What is the output of the expression `bool([])` in Python?",
+        "options": [
+          {"id": "A", "text": "True"},
+          {"id": "B", "text": "False"},
+          {"id": "C", "text": "None"},
+          {"id": "D", "text": "IndexError"}
+        ],
+        "correctOption": "B",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "Empty collections in Python (like [], {}, set(), '') evaluate to False in boolean contexts."
+      },
+      {
+        "id": 3,
+        "question": "How do you correctly open a file in Python such that it automatically closes even if an error occurs?",
+        "options": [
+          {"id": "A", "text": "open('file.txt', auto_close=True)"},
+          {"id": "B", "text": "with open('file.txt') as f:"},
+          {"id": "C", "text": "try: open('file.txt')"},
+          {"id": "D", "text": "file.safe_open('file.txt')"}
+        ],
+        "correctOption": "B",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "The 'with' statement creates a context manager that guarantees the file descriptor is closed when the block exits."
+      },
+      {
+        "id": 4,
+        "question": "What is the result of `2 ** 3 ** 2` in Python?",
+        "options": [
+          {"id": "A", "text": "64"},
+          {"id": "B", "text": "512"},
+          {"id": "C", "text": "36"},
+          {"id": "D", "text": "256"}
+        ],
+        "correctOption": "B",
+        "points": 2,
+        "difficulty": "Medium",
+        "explanation": "The exponentiation operator `**` has right-to-left associativity: `3 ** 2 = 9`, then `2 ** 9 = 512`."
+      },
+      {
+        "id": 5,
+        "question": "Which built-in function returns both the index and value when iterating through a sequence?",
+        "options": [
+          {"id": "A", "text": "range()"},
+          {"id": "B", "text": "enumerate()"},
+          {"id": "C", "text": "zip()"},
+          {"id": "D", "text": "items()"}
+        ],
+        "correctOption": "B",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "`enumerate(iterable)` yields tuples containing `(index, item)` for each element."
+      },
+      {
+        "id": 6,
+        "question": "What is a lambda function in Python?",
+        "options": [
+          {"id": "A", "text": "A function that runs asynchronously in a background thread"},
+          {"id": "B", "text": "A small anonymous function defined with the `lambda` keyword"},
+          {"id": "C", "text": "A generator function that produces infinite streams"},
+          {"id": "D", "text": "A built-in decorator for class methods"}
+        ],
+        "correctOption": "B",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "Python's `lambda` keyword defines small, single-expression anonymous functions inline."
+      },
+      {
+        "id": 7,
+        "question": "What will `list(set([1, 2, 2, 3, 3, 3]))` produce?",
+        "options": [
+          {"id": "A", "text": "[1, 2, 2, 3, 3, 3]"},
+          {"id": "B", "text": "[1, 2, 3]"},
+          {"id": "C", "text": "[3, 2, 1]"},
+          {"id": "D", "text": "{1, 2, 3}"}
+        ],
+        "correctOption": "B",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "Converting a list to a `set` eliminates all duplicate elements, and `list()` converts it back into a list with distinct values."
+      },
+      {
+        "id": 8,
+        "question": "What is the purpose of `__init__` in a Python class definition?",
+        "options": [
+          {"id": "A", "text": "To destroy and garbage collect an object"},
+          {"id": "B", "text": "To initialize the attributes of a newly created instance"},
+          {"id": "C", "text": "To make the class private to the current module"},
+          {"id": "D", "text": "To import external class modules"}
+        ],
+        "correctOption": "B",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "`__init__` is the constructor method in Python, automatically executed to initialize state when a class is instantiated."
+      }
+    ]
+  },
+  {
+    "id": "cs-fundamentals",
+    "title": "Computer Science & Data Structures",
+    "description": "Core concepts in algorithms, data structures, computational complexity, and logic.",
+    "category": "Computer Science",
+    "durationMinutes": 10,
+    "passingPercentage": 60,
+    "icon": "cpu",
+    "questions": [
+      {
+        "id": 1,
+        "question": "What is the average time complexity of searching for an element in a balanced Binary Search Tree (BST)?",
+        "options": [
+          {"id": "A", "text": "O(1)"},
+          {"id": "B", "text": "O(log n)"},
+          {"id": "C", "text": "O(n)"},
+          {"id": "D", "text": "O(n log n)"}
+        ],
+        "correctOption": "B",
+        "points": 1,
+        "difficulty": "Medium",
+        "explanation": "In a balanced BST, each comparison halves the search space, giving an average search complexity of O(log n)."
+      },
+      {
+        "id": 2,
+        "question": "Which data structure follows the Last-In, First-Out (LIFO) operational principle?",
+        "options": [
+          {"id": "A", "text": "Queue"},
+          {"id": "B", "text": "Stack"},
+          {"id": "C", "text": "Linked List"},
+          {"id": "D", "text": "Min-Heap"}
+        ],
+        "correctOption": "B",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "A Stack operates on the LIFO principle (the last element pushed is the first one popped)."
+      },
+      {
+        "id": 3,
+        "question": "Which sorting algorithm achieves an optimal O(n log n) worst-case time complexity while also being stable?",
+        "options": [
+          {"id": "A", "text": "Quick Sort"},
+          {"id": "B", "text": "Merge Sort"},
+          {"id": "C", "text": "Heap Sort"},
+          {"id": "D", "text": "Bubble Sort"}
+        ],
+        "correctOption": "B",
+        "points": 2,
+        "difficulty": "Medium",
+        "explanation": "Merge Sort guarantees O(n log n) time in all cases (worst, average, best) and preserves the relative order of equal items (stability)."
+      },
+      {
+        "id": 4,
+        "question": "In networking, which protocol provides reliable, connection-oriented, ordered byte-stream transmission?",
+        "options": [
+          {"id": "A", "text": "UDP"},
+          {"id": "B", "text": "IP"},
+          {"id": "C", "text": "TCP"},
+          {"id": "D", "text": "ICMP"}
+        ],
+        "correctOption": "C",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "TCP (Transmission Control Protocol) establishes a connection (3-way handshake) and provides error checking, sequence ordering, and acknowledgments."
+      },
+      {
+        "id": 5,
+        "question": "What occurs when two different keys hash to the exact same bucket index in a hash table?",
+        "options": [
+          {"id": "A", "text": "Stack Overflow"},
+          {"id": "B", "text": "Hash Collision"},
+          {"id": "C", "text": "Segmentation Fault"},
+          {"id": "D", "text": "Null Pointer Exception"}
+        ],
+        "correctOption": "B",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "A hash collision happens when the hash function computes the same slot index for distinct inputs; resolved via chaining or open addressing."
+      },
+      {
+        "id": 6,
+        "question": "Which algorithmic design paradigm solves a problem by breaking it into overlapping subproblems and storing their solutions?",
+        "options": [
+          {"id": "A", "text": "Greedy Approach"},
+          {"id": "B", "text": "Dynamic Programming"},
+          {"id": "C", "text": "Divide and Conquer"},
+          {"id": "D", "text": "Backtracking"}
+        ],
+        "correctOption": "B",
+        "points": 2,
+        "difficulty": "Medium",
+        "explanation": "Dynamic Programming optimizes recursive algorithms with overlapping subproblems by memoizing or tabulating intermediate subproblem results."
+      }
+    ]
+  },
+  {
+    "id": "ai-ml",
+    "title": "Artificial Intelligence & Machine Learning",
+    "description": "Core principles of deep learning, supervised learning, neural networks, and model evaluation.",
+    "category": "Artificial Intelligence",
+    "durationMinutes": 10,
+    "passingPercentage": 60,
+    "icon": "brain",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Which machine learning paradigm uses labeled training datasets to learn a mapping function from input to output?",
+        "options": [
+          {"id": "A", "text": "Unsupervised Learning"},
+          {"id": "B", "text": "Supervised Learning"},
+          {"id": "C", "text": "Reinforcement Learning"},
+          {"id": "D", "text": "Self-Supervised Clustering"}
+        ],
+        "correctOption": "B",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "Supervised learning trains predictive models using input-output pairs labeled with known correct answers."
+      },
+      {
+        "id": 2,
+        "question": "What is overfitting in machine learning models?",
+        "options": [
+          {"id": "A", "text": "The model performs poorly on training data and well on test data"},
+          {"id": "B", "text": "The model learns noise in training data and fails to generalize to unseen test data"},
+          {"id": "C", "text": "The model trains too quickly due to high learning rate"},
+          {"id": "D", "text": "The loss function reaches a global minimum too early"}
+        ],
+        "correctOption": "B",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "Overfitting happens when a model memorizes random fluctuations in training data, resulting in high accuracy on training but poor generalization to unseen data."
+      },
+      {
+        "id": 3,
+        "question": "Which activation function is most widely used in hidden layers of deep neural networks to prevent vanishing gradients?",
+        "options": [
+          {"id": "A", "text": "Sigmoid"},
+          {"id": "B", "text": "TanH"},
+          {"id": "C", "text": "ReLU (Rectified Linear Unit)"},
+          {"id": "D", "text": "Softmax"}
+        ],
+        "correctOption": "C",
+        "points": 1,
+        "difficulty": "Medium",
+        "explanation": "ReLU, defined as f(x) = max(0, x), does not saturate in the positive region, allowing gradients to propagate efficiently through deep layers."
+      },
+      {
+        "id": 4,
+        "question": "In classification metrics, which formula evaluates Recall (Sensitivity)?",
+        "options": [
+          {"id": "A", "text": "True Positives / (True Positives + False Positives)"},
+          {"id": "B", "text": "True Positives / (True Positives + False Negatives)"},
+          {"id": "C", "text": "(True Positives + True Negatives) / Total Samples"},
+          {"id": "D", "text": "False Positives / (False Positives + True Negatives)"}
+        ],
+        "correctOption": "B",
+        "points": 2,
+        "difficulty": "Medium",
+        "explanation": "Recall measures the proportion of actual positive samples that were correctly identified: TP / (TP + FN)."
+      },
+      {
+        "id": 5,
+        "question": "What is the primary strength of Convolutional Neural Networks (CNNs) in image processing?",
+        "options": [
+          {"id": "A", "text": "Preserving sequential time-series dependencies"},
+          {"id": "B", "text": "Exploiting spatial locality and translational invariance with parameter sharing"},
+          {"id": "C", "text": "Generating discrete text embeddings without convolutions"},
+          {"id": "D", "text": "Clustering tabular categorical data"}
+        ],
+        "correctOption": "B",
+        "points": 1,
+        "difficulty": "Medium",
+        "explanation": "CNNs apply convolution kernels to capture local spatial relationships like edges and patterns, sharing weights across the input image."
+      },
+      {
+        "id": 6,
+        "question": "Which optimization technique updates neural network weights layer-by-layer backwards using the chain rule?",
+        "options": [
+          {"id": "A", "text": "Dijkstra's Algorithm"},
+          {"id": "B", "text": "Backpropagation"},
+          {"id": "C", "text": "Simulated Annealing"},
+          {"id": "D", "text": "PageRank"}
+        ],
+        "correctOption": "B",
+        "points": 2,
+        "difficulty": "Medium",
+        "explanation": "Backpropagation calculates the gradient of the loss function with respect to each weight via calculus chain rule, propagating errors backwards."
+      }
+    ]
+  },
+  {
+    "id": "cybersecurity",
+    "title": "Cybersecurity & Ethical Hacking",
+    "description": "Defensive security, encryption, common web vulnerabilities, authentication, and network defense.",
+    "category": "Cybersecurity",
+    "durationMinutes": 10,
+    "passingPercentage": 60,
+    "icon": "shield",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Which vulnerability allows attackers to manipulate backend database queries through unsanitized user input?",
+        "options": [
+          {"id": "A", "text": "Cross-Site Scripting (XSS)"},
+          {"id": "B", "text": "SQL Injection (SQLi)"},
+          {"id": "C", "text": "Cross-Site Request Forgery (CSRF)"},
+          {"id": "D", "text": "Buffer Overflow"}
+        ],
+        "correctOption": "B",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "SQL Injection occurs when untrusted input is concatenated directly into SQL command strings instead of using parameterized queries."
+      },
+      {
+        "id": 2,
+        "question": "What is the defining characteristic of asymmetric (public-key) cryptography?",
+        "options": [
+          {"id": "A", "text": "It uses the same identical secret key for both encryption and decryption"},
+          {"id": "B", "text": "It uses a mathematically linked pair: a public key to encrypt and a private key to decrypt"},
+          {"id": "C", "text": "It can only encrypt files smaller than 128 bytes"},
+          {"id": "D", "text": "It operates solely over wired physical connections"}
+        ],
+        "correctOption": "B",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "Asymmetric encryption (e.g. RSA, ECC) employs a public key that anyone can use to encrypt data, and a private key held only by the receiver to decrypt."
+      },
+      {
+        "id": 3,
+        "question": "What is the security Principle of Least Privilege (PoLP)?",
+        "options": [
+          {"id": "A", "text": "Systems must never use password credentials"},
+          {"id": "B", "text": "Every user, program, or system should be granted only the minimum permissions necessary to perform its job"},
+          {"id": "C", "text": "Firewalls must block all incoming and outgoing packets"},
+          {"id": "D", "text": "Only senior managers can access computers"}
+        ],
+        "correctOption": "B",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "Least Privilege limits blast radius: if an account or service is compromised, the attacker only inherits minimum necessary permissions."
+      },
+      {
+        "id": 4,
+        "question": "Which protocol provides cryptographic confidentiality, server authentication, and integrity for HTTP web traffic?",
+        "options": [
+          {"id": "A", "text": "FTP"},
+          {"id": "B", "text": "TLS / SSL (HTTPS)"},
+          {"id": "C", "text": "DNS"},
+          {"id": "D", "text": "SNMP"}
+        ],
+        "correctOption": "B",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "Transport Layer Security (TLS), powering HTTPS over TCP port 443, encrypts web exchanges and verifies server identity via digital certificates."
+      },
+      {
+        "id": 5,
+        "question": "Which social engineering attack lures victims into disclosing sensitive credentials by impersonating legitimate institutions?",
+        "options": [
+          {"id": "A", "text": "Denial of Service (DoS)"},
+          {"id": "B", "text": "Phishing"},
+          {"id": "C", "text": "SYN Flood"},
+          {"id": "D", "text": "Buffer Overrun"}
+        ],
+        "correctOption": "B",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "Phishing exploits human deception using spoofed emails, domain typosquatting, or fraudulent pages to harvest credentials."
+      },
+      {
+        "id": 6,
+        "question": "What are the three canonical authentication factors recognized in Multi-Factor Authentication (MFA)?",
+        "options": [
+          {"id": "A", "text": "Something you Know, Something you Have, and Something you Are"},
+          {"id": "B", "text": "Something you See, Something you Say, and Something you Type"},
+          {"id": "C", "text": "Username, Password, and PIN"},
+          {"id": "D", "text": "Email address, Phone number, and Home address"}
+        ],
+        "correctOption": "A",
+        "points": 2,
+        "difficulty": "Medium",
+        "explanation": "MFA factors require: Knowledge (password/PIN), Possession (phone/security token), and Inherence (fingerprint/biometrics)."
+      }
+    ]
+  },
+  {
+    "id": "sql-databases",
+    "title": "Database Systems & SQL",
+    "description": "Relational databases, SQL queries, transaction ACID properties, indexing, and data normalization.",
+    "category": "Databases",
+    "durationMinutes": 10,
+    "passingPercentage": 60,
+    "icon": "database",
+    "questions": [
+      {
+        "id": 1,
+        "question": "What does the 'A' represent in the relational database ACID transaction guarantee?",
+        "options": [
+          {"id": "A", "text": "Availability"},
+          {"id": "B", "text": "Atomicity"},
+          {"id": "C", "text": "Asynchronous"},
+          {"id": "D", "text": "Authorization"}
+        ],
+        "correctOption": "B",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "Atomicity ensures that all operations in a database transaction succeed together or the entire transaction rolls back ('all-or-nothing')."
+      },
+      {
+        "id": 2,
+        "question": "Which SQL clause is used to filter aggregated data generated by a GROUP BY clause?",
+        "options": [
+          {"id": "A", "text": "WHERE"},
+          {"id": "B", "text": "HAVING"},
+          {"id": "C", "text": "ORDER BY"},
+          {"id": "D", "text": "LIMIT"}
+        ],
+        "correctOption": "B",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "'WHERE' filters individual rows before aggregation; 'HAVING' filters group aggregates (e.g. HAVING COUNT(*) > 5) after grouping."
+      },
+      {
+        "id": 3,
+        "question": "Which SQL JOIN returns all rows from the left table, along with matching rows from the right table (filling NULL for missing matches)?",
+        "options": [
+          {"id": "A", "text": "INNER JOIN"},
+          {"id": "B", "text": "LEFT OUTER JOIN"},
+          {"id": "C", "text": "RIGHT JOIN"},
+          {"id": "D", "text": "CROSS JOIN"}
+        ],
+        "correctOption": "B",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "A LEFT JOIN preserves every row from the left table, pairing it with right-table columns when keys match or NULLs when they do not."
+      },
+      {
+        "id": 4,
+        "question": "Which indexing data structure is most widely adopted by SQL engines for disk-based table indexing?",
+        "options": [
+          {"id": "A", "text": "Singly Linked List"},
+          {"id": "B", "text": "B+ Tree"},
+          {"id": "C", "text": "Stack"},
+          {"id": "D", "text": "Binary Heap"}
+        ],
+        "correctOption": "B",
+        "points": 2,
+        "difficulty": "Medium",
+        "explanation": "B+ Trees provide shallow balanced trees with high branching factor, minimizing disk I/O and enabling fast equality and range queries."
+      },
+      {
+        "id": 5,
+        "question": "What is the primary purpose of Database Normalization (1NF, 2NF, 3NF)?",
+        "options": [
+          {"id": "A", "text": "Increasing redundant columns for speed"},
+          {"id": "B", "text": "Eliminating data redundancy and preventing insertion, update, and deletion anomalies"},
+          {"id": "C", "text": "Eliminating all primary keys"},
+          {"id": "D", "text": "Encrypting table data at rest"}
+        ],
+        "correctOption": "B",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "Normalization breaks down large repetitive tables into smaller, well-structured relations linked by foreign keys to prevent data inconsistency."
+      },
+      {
+        "id": 6,
+        "question": "What is a key difference between a PRIMARY KEY and a UNIQUE constraint in SQL?",
+        "options": [
+          {"id": "A", "text": "A table can have multiple PRIMARY KEYs, but only one UNIQUE constraint"},
+          {"id": "B", "text": "A PRIMARY KEY strictly disallows NULL values, while UNIQUE constraints can accept NULLs"},
+          {"id": "C", "text": "UNIQUE constraints can only apply to integer columns"},
+          {"id": "D", "text": "PRIMARY KEYs are never indexed"}
+        ],
+        "correctOption": "B",
+        "points": 1,
+        "difficulty": "Medium",
+        "explanation": "A table has at most one PRIMARY KEY which must be NOT NULL; tables can have multiple UNIQUE constraints which may allow NULL values."
+      }
+    ]
+  },
+  {
+    "id": "cloud-devops",
+    "title": "Cloud Computing & DevOps",
+    "description": "Containerization with Docker, Kubernetes orchestration, CI/CD pipelines, cloud architectures, and IaC.",
+    "category": "Cloud & DevOps",
+    "durationMinutes": 10,
+    "passingPercentage": 60,
+    "icon": "cloud",
+    "questions": [
+      {
+        "id": 1,
+        "question": "How do Docker containers fundamentally differ from traditional virtual machines (VMs)?",
+        "options": [
+          {"id": "A", "text": "Containers require a complete guest operating system for each instance"},
+          {"id": "B", "text": "Containers share the host OS kernel and run as lightweight isolated user processes"},
+          {"id": "C", "text": "Containers can only run Python programs"},
+          {"id": "D", "text": "VMs do not use hypervisors"}
+        ],
+        "correctOption": "B",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "Containers virtualize at the operating system level, sharing the host kernel via cgroups and namespaces, while VMs virtualize hardware via a hypervisor."
+      },
+      {
+        "id": 2,
+        "question": "What is the primary function of Kubernetes in cloud environments?",
+        "options": [
+          {"id": "A", "text": "Compiling source code into machine code"},
+          {"id": "B", "text": "Automating containerized application deployment, autoscaling, load-balancing, and orchestration"},
+          {"id": "C", "text": "Serving static HTML pages"},
+          {"id": "D", "text": "Managing database schema migrations"}
+        ],
+        "correctOption": "B",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "Kubernetes (K8s) provides declarative container orchestration across a cluster of nodes, handling self-healing, scaling, and rolling releases."
+      },
+      {
+        "id": 3,
+        "question": "What does the 'CI' acronym stand for in DevOps engineering?",
+        "options": [
+          {"id": "A", "text": "Cloud Infrastructure"},
+          {"id": "B", "text": "Continuous Integration"},
+          {"id": "C", "text": "Central Intelligence"},
+          {"id": "D", "text": "Continuous Iteration"}
+        ],
+        "correctOption": "B",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "Continuous Integration (CI) is the practice of automatically integrating code into a shared repository and running builds/tests on every commit."
+      },
+      {
+        "id": 4,
+        "question": "Which zero-downtime deployment strategy maintains two identical environments (active production and staging) to switch traffic instantaneously?",
+        "options": [
+          {"id": "A", "text": "Canary Deployment"},
+          {"id": "B", "text": "Blue-Green Deployment"},
+          {"id": "C", "text": "In-place Overwrite"},
+          {"id": "D", "text": "Shadow Forking"}
+        ],
+        "correctOption": "B",
+        "points": 2,
+        "difficulty": "Medium",
+        "explanation": "Blue-Green deployment runs the new version (Green) alongside the current version (Blue); once validated, router traffic redirects instantly with zero downtime."
+      },
+      {
+        "id": 5,
+        "question": "Which Infrastructure as Code (IaC) tool uses declarative HCL configuration to provision resources across multi-cloud providers?",
+        "options": [
+          {"id": "A", "text": "Terraform"},
+          {"id": "B", "text": "Postman"},
+          {"id": "C", "text": "Git"},
+          {"id": "D", "text": "Nginx"}
+        ],
+        "correctOption": "A",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "HashiCorp Terraform enables developers to define and provision cloud infrastructure (AWS, GCP, Azure) declaratively with state tracking."
+      },
+      {
+        "id": 6,
+        "question": "What is the key distinction between Horizontal Scaling (Scale Out) and Vertical Scaling (Scale Up)?",
+        "options": [
+          {"id": "A", "text": "Horizontal adds more servers/nodes to a pool; Vertical upgrades CPU/RAM on an existing server"},
+          {"id": "B", "text": "Vertical adds more servers; Horizontal upgrades memory"},
+          {"id": "C", "text": "Horizontal scaling requires shutting down servers permanently"},
+          {"id": "D", "text": "Vertical scaling is only applicable to serverless functions"}
+        ],
+        "correctOption": "A",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "Horizontal scaling (Scale Out) distributes load across multiple machine instances, while Vertical scaling (Scale Up) increases the hardware capacity of one node."
+      }
+    ]
+  },
+  {
+    "id": "math-logic",
+    "title": "Data Aptitude & Discrete Mathematics",
+    "description": "Binary logic, discrete math, probability, combinatorics, modular arithmetic, and analytical problem-solving.",
+    "category": "Mathematics & Logic",
+    "durationMinutes": 10,
+    "passingPercentage": 60,
+    "icon": "math",
+    "questions": [
+      {
+        "id": 1,
+        "question": "What is the binary (Base-2) equivalent of the decimal integer 42?",
+        "options": [
+          {"id": "A", "text": "101010"},
+          {"id": "B", "text": "110010"},
+          {"id": "C", "text": "100110"},
+          {"id": "D", "text": "111000"}
+        ],
+        "correctOption": "A",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "42 in binary = 32 + 8 + 2 = (1 * 32) + (0 * 16) + (1 * 8) + (0 * 4) + (1 * 2) + (0 * 1) = 101010."
+      },
+      {
+        "id": 2,
+        "question": "What is the output of a standard 2-input XOR (Exclusive OR) logic gate when both inputs are 1 (True)?",
+        "options": [
+          {"id": "A", "text": "1 (True)"},
+          {"id": "B", "text": "0 (False)"},
+          {"id": "C", "text": "Undefined"},
+          {"id": "D", "text": "High Impedance"}
+        ],
+        "correctOption": "B",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "XOR outputs True (1) if and only if exactly one input is True. When both inputs are 1, the XOR output is 0 (False)."
+      },
+      {
+        "id": 3,
+        "question": "What is the probability of drawing an Ace from a standard well-shuffled 52-card deck?",
+        "options": [
+          {"id": "A", "text": "1 / 13"},
+          {"id": "B", "text": "1 / 52"},
+          {"id": "C", "text": "4 / 13"},
+          {"id": "D", "text": "1 / 4"}
+        ],
+        "correctOption": "A",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "There are 4 Aces in a 52-card deck: 4 / 52 simplifies to 1 / 13 (~7.69%)."
+      },
+      {
+        "id": 4,
+        "question": "How many distinct 4-letter arrangements (permutations) can be formed using the letters in 'CODE' without repetition?",
+        "options": [
+          {"id": "A", "text": "16"},
+          {"id": "B", "text": "24"},
+          {"id": "C", "text": "12"},
+          {"id": "D", "text": "4"}
+        ],
+        "correctOption": "B",
+        "points": 1,
+        "difficulty": "Medium",
+        "explanation": "Number of permutations for 4 distinct letters = 4! = 4 × 3 × 2 × 1 = 24."
+      },
+      {
+        "id": 5,
+        "question": "What is the result of the modular arithmetic expression `29 mod 7`?",
+        "options": [
+          {"id": "A", "text": "4"},
+          {"id": "B", "text": "1"},
+          {"id": "C", "text": "2"},
+          {"id": "D", "text": "3"}
+        ],
+        "correctOption": "B",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "29 divided by 7 equals 4 with a remainder of 1 (7 × 4 + 1 = 29), so 29 mod 7 = 1."
+      },
+      {
+        "id": 6,
+        "question": "In an arithmetic progression defined by the formula a_n = 3n + 2, what is the value of the 10th term (a_10)?",
+        "options": [
+          {"id": "A", "text": "30"},
+          {"id": "B", "text": "32"},
+          {"id": "C", "text": "35"},
+          {"id": "D", "text": "28"}
+        ],
+        "correctOption": "B",
+        "points": 1,
+        "difficulty": "Easy",
+        "explanation": "For n = 10: a_10 = 3(10) + 2 = 30 + 2 = 32."
+      }
+    ]
+  }
+]

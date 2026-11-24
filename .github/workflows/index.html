@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduQuiz | Online Quiz & Automated Assessment Portal</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="brand" id="brandBtn">
+        <div class="brand-icon">🎓</div>
+        <span>EduQuiz Portal</span>
+      </div>
+
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button class="btn btn-secondary btn-sm" id="themeToggleBtn" title="Toggle Dark/Light Mode">
+          🌙 Theme
+        </button>
+
+        <!-- Logged In User Indicator -->
+        <div class="user-badge" id="userBadge" style="display: none;">
+          <div class="user-avatar" id="navUserAvatar">ST</div>
+          <div>
+            <strong id="navUserName">Student</strong>
+            <span style="font-size: 0.75rem; color: var(--text-muted); display: block;" id="navStudentId">ID: STU-1001</span>
+          </div>
+          <button class="btn btn-outline btn-sm" id="myHistoryBtn" style="margin-left: 0.5rem;">
+            📊 History
+          </button>
+          <button class="btn btn-secondary btn-sm" id="logoutBtn" style="margin-left: 0.25rem;">
+            Logout
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Application Body -->
+  <main class="main-content">
+
+    <!-- ================= VIEW 1: STUDENT AUTH (LOGIN / REGISTER) ================= -->
+    <section id="authView" class="view-section active">
+      <div class="auth-wrapper">
+        <div class="auth-card">
+          <div class="auth-header">
+            <div style="font-size: 3rem; margin-bottom: 0.5rem;">📝</div>
+            <h1>Student Portal</h1>
+            <p>Sign in to access your online MCQ assessments and instant marks calculation.</p>
+          </div>
+
+          <div class="auth-tabs">
+            <button class="tab-btn active" id="tabLoginBtn" type="button">Student Login</button>
+            <button class="tab-btn" id="tabRegisterBtn" type="button">Register New Student</button>
+          </div>
+
+          <!-- Login Form -->
+          <form id="loginForm">
+            <div class="form-group">
+              <label class="form-label" for="loginIdentifier">Student ID or Email</label>
+              <input type="text" id="loginIdentifier" class="form-input" placeholder="e.g. STU-2024 or student@school.edu" required autocomplete="username">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="loginPassword">Password</label>
+              <input type="password" id="loginPassword" class="form-input" placeholder="Enter your password" required autocomplete="current-password">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top: 1rem;">
+              🚀 Sign In & Enter Portal
+            </button>
+          </form>
+
+          <!-- Register Form -->
+          <form id="registerForm" style="display: none;">
+            <div class="form-group">
+              <label class="form-label" for="regName">Full Name</label>
+              <input type="text" id="regName" class="form-input" placeholder="e.g. Alex Morgan" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="regStudentId">Student ID Roll No.</label>
+              <input type="text" id="regStudentId" class="form-input" placeholder="e.g. STU-2024-90" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="regEmail">Email Address</label>
+              <input type="email" id="regEmail" class="form-input" placeholder="student@example.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="regPassword">Create Password</label>
+              <input type="password" id="regPassword" class="form-input" placeholder="Minimum 4 characters" minlength="4" required>
+            </div>
+            <button type="submit" class="btn btn-success btn-block btn-lg" style="margin-top: 1rem;">
+              ✨ Create Student Account
+            </button>
+          </form>
+
+          <!-- Quick Demo Login Button -->
+          <div class="quick-guest-box">
+            <button type="button" class="btn btn-warning btn-block btn-lg" id="quickSpeedStartBtn" style="margin-bottom: 0.75rem; font-weight: 800;">
+              ⚡ Instant 1-Click Speed Start (Skip Login & Play)
+            </button>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              Or sign in as sample student:
+            </p>
+            <button type="button" class="btn btn-secondary btn-block" id="quickDemoLoginBtn">
+              👤 Demo Student Access (Alex Johnson)
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= VIEW 2: QUIZ DASHBOARD / CATALOG ================= -->
+    <section id="dashboardView" class="view-section">
+      <div class="dashboard-hero">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <h2 id="heroGreeting">Welcome, Student!</h2>
+            <p>Select an online quiz below. Each multiple-choice test features instant automated mark calculation with comprehensive answer explanations.</p>
+          </div>
+          <button class="btn btn-warning btn-lg" id="dashFastQuizBtn" style="font-weight: 800; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);">
+            ⚡ Fast Speed Quiz (Start Now)
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Summary -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon" style="background: #e0e7ff; color: #4338ca;">📋</div>
+          <div class="stat-info">
+            <div class="stat-value" id="statQuizzesTaken">0</div>
+            <div class="stat-label">Quizzes Completed</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background: #dcfce7; color: #15803d;">🎯</div>
+          <div class="stat-info">
+            <div class="stat-value" id="statAvgScore">0%</div>
+            <div class="stat-label">Average Score</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background: #fef3c7; color: #b45309;">🏆</div>
+          <div class="stat-info">
+            <div class="stat-value" id="statPassRate">0%</div>
+            <div class="stat-label">Pass Rate</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Available Quizzes -->
+      <div class="section-heading">
+        <h3>Available Online Quizzes</h3>
+        <span style="font-size: 0.9rem; color: var(--text-secondary);">Select a topic to begin assessment</span>
+      </div>
+
+      <div class="quiz-grid" id="quizzesContainer">
+        <!-- Rendered dynamically -->
+      </div>
+    </section>
+
+    <!-- ================= VIEW 3: LIVE MCQ EXAM PLAYER ================= -->
+    <section id="quizPlayerView" class="view-section">
+      <!-- Quiz Header Banner -->
+      <div class="quiz-live-header">
+        <div class="quiz-info-header">
+          <span class="badge badge-primary" id="playerCategoryBadge">Web Development</span>
+          <h2 id="playerQuizTitle" style="margin-top: 0.25rem;">Web Development Essentials</h2>
+        </div>
+
+        <!-- Fast Mode Toggle -->
+        <label style="display: flex; align-items: center; gap: 0.5rem; background: var(--bg-subtle); padding: 0.4rem 0.8rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); cursor: pointer; font-size: 0.85rem; font-weight: 600;">
+          <input type="checkbox" id="fastModeCheckbox" checked style="accent-color: var(--primary); cursor: pointer; width: 16px; height: 16px;">
+          <span>⚡ Fast Auto-Advance</span>
+        </label>
+
+        <!-- Live Countdown Timer -->
+        <div class="quiz-timer-box">
+          <span style="font-size: 1.25rem;">⏱️</span>
+          <div>
+            <div style="font-size: 0.7rem; text-transform: uppercase; font-weight: 700; color: var(--text-secondary);">Time Left</div>
+            <div class="timer-digits" id="timerDisplay">10:00</div>
+          </div>
+        </div>
+
+        <button class="btn btn-success" id="playerFinishBtn">
+          ✅ Submit & Calculate Marks
+        </button>
+      </div>
+
+      <!-- Main Quiz Workspace -->
+      <div class="quiz-workspace">
+        <!-- Left: Current Question Area -->
+        <div class="question-box">
+          <div class="question-meta-row">
+            <div>
+              <span class="badge badge-primary" id="qCurrentIndexBadge">Question 1 of 8</span>
+              <span class="badge badge-warning" id="qPointsBadge">+1 Mark</span>
+              <span class="badge badge-secondary" id="qDifficultyBadge">Medium</span>
+            </div>
+            <button class="btn btn-outline btn-sm" id="flagQuestionBtn">
+              🚩 <span id="flagBtnText">Flag for Review</span>
+            </button>
+          </div>
+
+          <!-- Question Text -->
+          <div class="question-text" id="qStatement">
+            Loading question...
+          </div>
+
+          <!-- MCQ Options List -->
+          <div class="options-container" id="optionsContainer">
+            <!-- Rendered dynamically (A, B, C, D) -->
+          </div>
+
+          <!-- Bottom Navigation Controls -->
+          <div class="quiz-controls-row">
+            <button class="btn btn-secondary" id="prevQBtn">
+              ⬅️ Previous
+            </button>
+
+            <button class="btn btn-outline btn-sm" id="clearSelectionBtn">
+              🧹 Clear Selection
+            </button>
+
+            <button class="btn btn-primary" id="nextQBtn">
+              Next ➡️
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: Question Palette & Overview -->
+        <aside class="quiz-sidebar">
+          <div class="palette-card">
+            <h4>Question Navigator</h4>
+            <div class="palette-grid" id="paletteGrid">
+              <!-- Rendered dynamically -->
+            </div>
+
+            <div class="palette-legend">
+              <div class="legend-item">
+                <div class="legend-dot answered"></div>
+                <span>Answered (<strong id="countAnswered">0</strong>)</span>
+              </div>
+              <div class="legend-item">
+                <div class="legend-dot flagged"></div>
+                <span>Flagged for Review (<strong id="countFlagged">0</strong>)</span>
+              </div>
+              <div class="legend-item">
+                <div class="legend-dot unanswered"></div>
+                <span>Unanswered (<strong id="countUnanswered">0</strong>)</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ================= VIEW 4: AUTOMATED RESULTS & MARKS DISPLAY ================= -->
+    <section id="resultView" class="view-section">
+      <!-- Result Summary Hero Card -->
+      <div class="result-hero" id="resultHeroCard">
+        <div class="result-status-stamp" id="resultStatusStamp">
+          🏆 PASSED
+        </div>
+
+        <h2 id="resultTitle">Assessment Results</h2>
+        <p id="resultSubtitle" style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+          Automated evaluation completed. Below is your detailed performance report and question-by-question breakdown.
+        </p>
+
+        <!-- Circular Score Display -->
+        <div class="score-circle-container">
+          <div class="score-display-number" id="resultMarksNumber">0 / 0</div>
+          <div class="score-display-sub" id="resultPercentage">0% Marks</div>
+        </div>
+
+        <!-- Performance Grade Badge -->
+        <div style="margin-bottom: 1.5rem;">
+          <span class="badge badge-primary" id="resultGradeBadge" style="font-size: 1rem; padding: 0.4rem 1.25rem;">
+            Grade: A+ (Outstanding)
+          </span>
+        </div>
+
+        <!-- Metrics Grid -->
+        <div class="result-metrics-grid">
+          <div class="metric-pill">
+            <div class="metric-val" id="metricTotalMarks">0 / 0</div>
+            <div class="metric-name">Marks Scored</div>
+          </div>
+          <div class="metric-pill">
+            <div class="metric-val" style="color: var(--success);" id="metricCorrect">0</div>
+            <div class="metric-name">Correct Answers</div>
+          </div>
+          <div class="metric-pill">
+            <div class="metric-val" style="color: var(--danger);" id="metricIncorrect">0</div>
+            <div class="metric-name">Incorrect Answers</div>
+          </div>
+          <div class="metric-pill">
+            <div class="metric-val" style="color: var(--warning);" id="metricUnattempted">0</div>
+            <div class="metric-name">Unattempted</div>
+          </div>
+          <div class="metric-pill">
+            <div class="metric-val" id="metricTimeTaken">00:00</div>
+            <div class="metric-name">Time Taken</div>
+          </div>
+        </div>
+
+        <!-- Quick Action Buttons -->
+        <div class="result-actions">
+          <button class="btn btn-outline" id="printScorecardBtn">
+            🖨️ Print / Save Scorecard
+          </button>
+          <button class="btn btn-secondary" id="retakeQuizBtn">
+            🔄 Retake Quiz
+          </button>
+          <button class="btn btn-primary" id="backToCatalogBtn">
+            📚 Take Another Quiz
+          </button>
+        </div>
+      </div>
+
+      <!-- Question-by-Question Detailed Review -->
+      <div class="review-section">
+        <div class="section-heading">
+          <h3>Question-by-Question Review & Explanations</h3>
+        </div>
+
+        <!-- Filter Pills -->
+        <div class="review-filter-tabs">
+          <button class="filter-pill active" data-filter="all" id="filterAllBtn">All Questions (<span id="filterAllCount">0</span>)</button>
+          <button class="filter-pill" data-filter="correct" id="filterCorrectBtn">✅ Correct (<span id="filterCorrectCount">0</span>)</button>
+          <button class="filter-pill" data-filter="incorrect" id="filterIncorrectBtn">❌ Incorrect (<span id="filterIncorrectCount">0</span>)</button>
+          <button class="filter-pill" data-filter="unattempted" id="filterUnattemptedBtn">⚠️ Unattempted (<span id="filterUnattemptedCount">0</span>)</button>
+        </div>
+
+        <!-- Container for review cards -->
+        <div id="reviewCardsContainer">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= VIEW 5: STUDENT ATTEMPTS HISTORY ================= -->
+    <section id="historyView" class="view-section">
+      <div class="section-heading" style="margin-bottom: 1.5rem;">
+        <div>
+          <h2>Your Quiz History & Performance Log</h2>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">Track all your past online MCQ attempts and inspect previous scorecards.</p>
+        </div>
+        <button class="btn btn-primary btn-sm" id="historyBackBtn">
+          ⬅️ Back to Quizzes
+        </button>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Date & Time</th>
+              <th>Quiz Title</th>
+              <th>Marks Scored</th>
+              <th>Percentage</th>
+              <th>Status</th>
+              <th>Time Taken</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="historyTableBody">
+            <!-- Rendered dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Submit Confirmation Modal -->
+  <div class="modal-backdrop" id="submitModal">
+    <div class="modal-content">
+      <div style="font-size: 2.5rem; text-align: center; margin-bottom: 0.5rem;">📋</div>
+      <h3 style="text-align: center; margin-bottom: 0.75rem;">Submit Assessment?</h3>
+      <p id="submitModalWarning" style="color: var(--text-secondary); text-align: center; margin-bottom: 1.5rem; font-size: 0.95rem;">
+        Are you ready to submit your quiz for instant automated evaluation?
+      </p>
+
+      <div style="background: var(--bg-subtle); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.5rem; display: flex; justify-content: space-around; text-align: center;">
+        <div>
+          <div style="font-weight: 700; color: var(--success);" id="modalCountAnswered">0</div>
+          <div style="font-size: 0.75rem; color: var(--text-secondary);">Answered</div>
+        </div>
+        <div>
+          <div style="font-weight: 700; color: var(--warning);" id="modalCountUnanswered">0</div>
+          <div style="font-size: 0.75rem; color: var(--text-secondary);">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.75rem;">
+        <button class="btn btn-secondary btn-block" id="cancelSubmitBtn">
+          Cancel & Continue Quiz
+        </button>
+        <button class="btn btn-primary btn-block" id="confirmSubmitBtn">
+          Yes, Submit Now
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
